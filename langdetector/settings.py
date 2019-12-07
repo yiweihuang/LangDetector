@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'detectorAPP',
+    'django_jenkins',
 ]
 
 REST_FRAMEWORK = {
@@ -48,6 +49,13 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [],
     'TEST_REQUEST_DEFAULT_FORMAT': 'json'
 }
+
+PROJECT_APPS = ['detectorAPP']
+
+JENKINS_TASKS = [
+    'django_jenkins.tasks.run_pep8',
+    'django_jenkins.tasks.run_pyflakes',
+]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
